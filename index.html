@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content=" ">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <!-- import font -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Nunito&display=swap"
+    rel="stylesheet"> -->
+    <!-- import font awesome -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- import bootstrap css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- import main style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- import main style responsive -->
+    <link rel="stylesheet" href="assets/css/style_responsive.css">
+     <!--box icons -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <title>Tik Tak</title>
+</head>
+
+ 
+    <!-- start navbar -->
+    <nav class="navbar ">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1 text-capitalize fs-2">tik tak</span>
+    </div>
+     </nav>
+    <!-- end navbar -->
+    <!-- start head -->
+    <section class="myHead">
+        <div class=" container">
+
+            <h1 class="myTitle text-capitalize text-center my-5 fs-1">manage your time with <span>tik tak</span></h1>
+            <!-- start to do (to add new list)-->
+            <div class="">
+              <div class="container">
+                 <button type="button" id="newList" class="toDoBtn btn border-opacity-50 border border-3 myTitle text-capitalize fs-1 text-start">new list <i class="fa-duotone fa-plus fs-1"></i></button>
+                 <div class="toDo container border  my-4 bg-light" style="  width: 40%; margin:auto;">
+                  <h5 class="text-capitalize text-center fs-1 titles">my list</h5>
+        
+                 <form class="my-4">
+                  <div class="mb-4 ">
+                    <input type="text" id="taskName" class="form-control"  placeholder="Task Name" style="width:100%;margin:10px 0; display:block;">
+                  </div> 
+                    <div class="mb-4 ">
+                      <div class="input-group">
+                        <textarea id="taskDes" class="form-control" placeholder="My Task" aria-label="With textarea"></textarea>
+                      </div>
+                      </div> 
+        
+                      <div class="mb-4 ">
+                        <input type="date" id="taskDate" class="form-control"  placeholder="" style="width:100%;margin:10px 0; display:block;">
+                      </div> 
+                </form> 
+                <div class="BTN text-end">
+                  <button type="button" id="saveTask" class="btn  saveBtn py-1 my-1">Save</button>
+                </div>
+               
+            </div>
+          
+             </div>
+            </div>
+            <!-- end to do -->
+            <!-- start update to do -->
+            <div class="updatetoDo">
+              <div class="container">
+                 
+                 <div class="container border  my-4 bg-light" style="  width: 40%; margin:auto;">
+                  <h5 class="text-capitalize text-center fs-1 titles">update your list</h5>
+        
+                 <form class="my-4">
+                  <div class="mb-4 ">
+                    <input type="text" id="updateName" class="form-control"  placeholder="Task Name" style="width:100%;margin:10px 0; display:block;">
+                  </div> 
+                    <div class="mb-4 ">
+                      <div class="input-group">
+                        <textarea id="updateDes" class="form-control" placeholder="My Task" aria-label="With textarea"></textarea>
+                      </div>
+                      </div> 
+        
+                      <div class="mb-4 ">
+                        <input type="date" id="updateDate" class="form-control"  placeholder="" style="width:100%;margin:10px 0; display:block;">
+                      </div> 
+                </form> 
+                <div class="BTN text-end">
+                  
+                  <button type="button" id="closeUpdateTask" class="btn btn-secondary  py-1 my-1">close</button>
+                  <button type="button" id="updateTask"  class="btn  saveBtn py-1 my-1">Update</button>
+                </div>
+               
+            </div>
+               
+             </div>
+            </div>
+            <div class="row d-flex justify-content-center"  id="toDoCard">
+                  
+            </div>
+            <!-- end update to do -->
+           <!--start log in section -->
+           <div class="login">
+          <div class="container border  my-4 bg-light" style="  width: 40%; margin:auto;">
+          <h5 class="text-capitalize text-center fs-1 logTitle">log in</h5>
+
+          <div class="alert alert-danger d-none" id="wrongAlert" role="alert">
+          Wrong Email or password 
+          </div>
+
+         <form class="my-4">
+             
+            <div class="mb-4 ">
+                <input type="email" id="logEmail" class="form-control"  placeholder="name@example.com" style="width:100%;margin:10px 0; display:block;" >
+              </div> 
+
+              <div class="mb-4 ">
+                <input type="password" id="logPass" class="form-control" id="inputPassword" placeholder="Password" style="width:100%;margin:10px 0; display:block;">
+              </div> 
+        </form> 
+        <div class="BTN text-end">
+          <button type="button" id="logSubmit" class="btn  saveBtn">Next</button>
+        </div>
+       
+    </div>
+           </div>
+           <!-- end log in  -->
+           <!-- start clock section -->
+           <div class="clock ">
+                <div class="">
+                    <div class=" grid">
+                        <div class="clock__circle">
+                            <span class="clock__twelve"></span>
+                            <span class="clock__three"></span>
+                            <span class="clock__six"></span>
+                            <span class="clock__nine"></span>
+        
+                            <div class="clock__rounder"></div>
+                            <div class="clock__hour" id="clock-hour"></div>
+                            <div class="clock__minutes" id="clock-minutes"></div>
+                            <div class="clock__seconds" id="clock-seconds"></div>
+        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="myBtn my-5 py-5  ">
+                <button type="button" id="logIn" class="btn btn-secondary text-capitalize mx-2">log in</button>
+               <button type="button" class="btn btn-secondary text-capitalize mx-2"  data-bs-toggle="modal" data-bs-target="#signModal">sign up</button>
+            </div>
+         </div>
+         </section>
+         <!-- start sign up -->
+         <div class="modal fade" id="signModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-capitalize text-center fs-1" id="exampleModalLabel">sign up</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                <label class="col-sm-2 col-form-label">Name</label>
+                    <input type="text" id="signName" class="form-control " placeholder="User Name" aria-label="Username" aria-describedby="addon-wrapping" required>
+                    <label id="textAlert" class=" text-danger d-none alert alert-danger w-100 my-1" >Start with capital Letter and atleast 5 character</label>
+                </div>
+                  <div class="mb-3 ">
+                    <label  class="col-sm-2 col-form-label">Email</label>
+                    <input type="email" id="signEmail" class="form-control" placeholder="name@example.com" aria-label="Username" aria-describedby="addon-wrapping">
+                    <label id="emailAlert" class=" text-danger d-none alert alert-danger w-100 my-1" >should contain @</label>
+                  </div>
+                  <div class="mb-3 ">
+                    <label  class="col-sm-2 col-form-label">password</label>
+                    <input type="password" id="signPass" class="form-control" placeholder="password" aria-label="Username" aria-describedby="addon-wrapping">
+                    <label id="passAlert" class=" text-danger d-none alert alert-danger w-100 my-1" >at least 4 digit</label>
+                  </div>
+                 
+                  <label  class="col-sm-2 col-form-label">Gender</label>
+                  <div class="container">
+                    <div class="row">
+                      <ul class="radioBtn mx-5">
+                        <li class="list-inline list-inline-item">
+                           <input type="radio" id="male" name="gender" value="male">
+                          <label >Male</label><br>
+                        </li>
+                        <li class="list-inline list-inline-item">
+                          <input type="radio" id="female" name="gender" value="female">
+                         <label >Female</label><br>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  
+            </div>
+            <div class="modal-footer myModal">
+              <button type="button" id="signClose" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" id="signSave" class="btn  saveBtn">Save changes</button>
+            </div>
+          </div>
+        </div>
+         </div>
+         <!-- end sign up -->
+         <!-- end head -->
+         <!-- import bootstrap js  -->
+         <script src="assets/js/bootstrap.bundle.min.js"></script>
+         <!-- jquery lib -->
+         <script src="assets/js/jquery-3.6.0.min.js"></script>
+         <!-- my js file -->
+        <script src="assets/js/script.js"></script>
+
+</body>
+</html>
