@@ -182,7 +182,7 @@ logSubmit.addEventListener('click',function(){
 
 function  displayClientPage(){
   $(".toDoBtn").show()
-  toDoCard.classList.remove("d-none");
+   displayTask();
 }
 
 saveTask.addEventListener('click',function(){
